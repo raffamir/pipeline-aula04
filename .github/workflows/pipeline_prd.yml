@@ -6,18 +6,21 @@ on:
 
 jobs:
 
-  build:
+  test:
 
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout do código
-        uses: actions/checkout@v4
+      - name: Checkout código
+        uses: actions/checkout@v3
 
       - name: Instalar Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v3
         with:
-          node-version: 24
+          node-version: 18
 
-      - name: Executar o programa
-        run: node index.js
+      - name: Instalar dependências
+        run: npm install
+
+      - name: Rodar testes
+        run: npm test
