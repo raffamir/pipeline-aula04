@@ -24,3 +24,11 @@ jobs:
 
       - name: Rodar testes
         run: npm test
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Simular Deploy
+        run: echo "Deploy realizado com sucesso!"
