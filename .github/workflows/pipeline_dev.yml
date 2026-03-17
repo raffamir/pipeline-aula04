@@ -35,7 +35,7 @@ jobs:
         uses: SonarSource/sonarcloud-github-action@v2
         with:
           args: >
-            -Dsonar.projectKey=raffamir
+            -Dsonar.projectKey=raffamir_pipeline-aula04
             -Dsonar.organization=raffamir
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
