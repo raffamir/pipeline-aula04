@@ -31,6 +31,15 @@ jobs:
       - name: Rodar Coverage
         run: npm run coverage
 
+      - name: Análise com SonarCloud
+        uses: SonarSource/sonarcloud-github-action@v2
+        with:
+          args: >
+            -Dsonar.projectKey=raffamir
+            -Dsonar.organization=raffamir
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+
 
   build:
 
